@@ -27,10 +27,10 @@ def home(request):
     while hour < 24:
         temp = location.hourly[i].temperature
 
-        if hour > 12:
-            print('{}pm -- {}temp'.format(hour-12,temp))
-        else:
+        if hour < 12:
             print('{}am -- {}temp'.format(hour,temp))
+        else:
+            print('{}pm -- {}temp'.format(hour,temp))
         
         hour += 1
         i += 1
